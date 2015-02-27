@@ -18,7 +18,8 @@ namespace dynlib
 
 				TbStateContainer::~TbStateContainer()
 				{
-
+					removeAllState();
+					delete states_;
                 }
 
 				TbState* TbStateContainer::createNewState()
@@ -73,6 +74,7 @@ namespace dynlib
 				{
 					TbStateAction *stateAction_ = new TbRemoveStateAction();
 					forEach_(stateAction_);
+					states_->clear();
                 }
 			}
 		}
