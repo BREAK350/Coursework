@@ -18,7 +18,8 @@ namespace dynlib
 }
 //---------------------------------------------------------------------------
 // includes
-
+#include <map.h>
+#include "TbState.h"
 //---------------------------------------------------------------------------
 namespace dynlib
 {
@@ -32,23 +33,14 @@ namespace dynlib
 				{
 					// fields
 					private:
-					protected:
+						map<int, TbState*> *states_;
 					public:
+						TbStateContainer();
+						~TbStateContainer();
 
-					// static fields
-					private:
-					protected:
-					public:
-
-					// methods
-					private:
-					protected:
-					public:
-
-					// static methods
-					private:
-					protected:
-					public:
+						TbState* createNewState();
+						TbState* getState(const int &id)const;
+						int getStateCount()const;
 				};
 
 			}

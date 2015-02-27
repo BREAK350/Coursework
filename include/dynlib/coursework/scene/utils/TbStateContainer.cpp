@@ -11,7 +11,41 @@ namespace dynlib
 		{
             namespace utils
 			{
+				TbStateContainer::TbStateContainer()
+				{
+					states_ = new map<int, TbState*>();
+				}
 
+				TbStateContainer::~TbStateContainer()
+				{
+
+                }
+
+				TbState* TbStateContainer::createNewState()
+				{
+					TbState *newState_ = new TbState();
+					int id = getStateCount();
+					newState_->setId(id);
+					(*states_)[id] = newState_;
+					return newState_;
+				}
+
+				TbState* TbStateContainer::getState(const int &id)const
+				{
+					TbState *state = NULL;
+					map<int, TbState*>::iterator it;
+					it = states_->find(id);
+					if(it != states_->end())
+					{
+						state = it->second;
+					}
+					return state;
+                }
+
+				int TbStateContainer::getStateCount()const
+				{
+					return states_->size();
+                }
 			}
 		}
 	}
