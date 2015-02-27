@@ -20,6 +20,7 @@ namespace dynlib
 // includes
 #include <map.h>
 #include "TbState.h"
+#include "TbStateAction.h"
 //---------------------------------------------------------------------------
 namespace dynlib
 {
@@ -41,6 +42,9 @@ namespace dynlib
 						TbState* createNewState();
 						TbState* getState(const int &id)const;
 						int getStateCount()const;
+
+						void forEach(TbStateAction *stateAction);
+						void forEach_(TbStateAction *&stateAction_);
 				};
 
 			}
