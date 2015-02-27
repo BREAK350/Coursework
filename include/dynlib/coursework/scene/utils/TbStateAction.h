@@ -16,6 +16,7 @@ namespace dynlib
 				class TbStateAction
 				{
 					public:
+						virtual ~TbStateAction() {}
 						virtual void action(TbState *state) = 0;
 				};
 			}

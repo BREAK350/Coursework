@@ -13,6 +13,7 @@ namespace dynlib
 				class TbIdable
 				{
 					public:
+						virtual ~TbIdable() {}
 						virtual int getId()const = 0;
 						virtual void setId(const int &id) { }
 				};

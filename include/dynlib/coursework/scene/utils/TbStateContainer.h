@@ -37,7 +37,7 @@ namespace dynlib
 						map<int, TbState*> *states_;
 					public:
 						TbStateContainer();
-						~TbStateContainer();
+						virtual ~TbStateContainer();
 
 						TbState* createNewState();
 						TbState* getState(const int &id)const;
