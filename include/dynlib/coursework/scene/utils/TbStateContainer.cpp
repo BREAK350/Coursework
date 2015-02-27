@@ -49,18 +49,24 @@ namespace dynlib
 
 				void TbStateContainer::forEach(TbStateAction *stateAction)
 				{
-					for(map<int, TbState*>::iterator it = states_->begin();
-						it != states_->end(); ++it)
+					if(states_ && stateAction)
 					{
-                    	stateAction->action(it->second);
+						for(map<int, TbState*>::iterator it = states_->begin();
+							it != states_->end(); ++it)
+						{
+							stateAction->action(it->second);
+						}
 					}
 				}
 
 				void TbStateContainer::forEach_(TbStateAction *&stateAction_)
 				{
-					forEach(stateAction_);
-					delete stateAction_;
-                    stateAction_ = NULL;
+					if(stateAction_)
+					{
+						forEach(stateAction_);
+						delete stateAction_;
+						stateAction_ = NULL;
+                    }
 				}
 
 				void TbStateContainer::removeAllState()
