@@ -14,6 +14,7 @@ namespace dynlib
 				{
 					public:
 						virtual int getId() = 0;
+						virtual void setId(const int &id) { }
 				};
 			}
 		}
