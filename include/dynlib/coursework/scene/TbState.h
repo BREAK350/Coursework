@@ -15,7 +15,7 @@ namespace dynlib
 }
 //---------------------------------------------------------------------------
 // includes
-
+#include "TbIdable.h"
 //---------------------------------------------------------------------------
 namespace dynlib
 {
@@ -23,27 +23,13 @@ namespace dynlib
 	{
 		namespace scene
 		{
-			class TbState
+			class TbState: public utils::TbIdable
 			{
-				// fields
 				private:
-				protected:
+					int id;
 				public:
-
-				// static fields
-				private:
-				protected:
-				public:
-
-				// methods
-				private:
-				protected:
-				public:
-
-				// static methods
-				private:
-				protected:
-				public:
+					virtual int getId()const;
+					virtual void setId(const int &id);
             };
 		}
 	}

@@ -9,7 +9,15 @@ namespace dynlib
 	{
 		namespace scene
 		{
+			int TbState::getId()const
+			{
+				return id;
+			}
 
+			void TbState::setId(const int &id)
+			{
+				this->id = id;
+            }
 		}
 	}
 }
