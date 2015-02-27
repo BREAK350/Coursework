@@ -47,6 +47,16 @@ namespace dynlib
 						void forEach_(TbStateAction *&stateAction_);
 				};
 
+				class TbRemoveStateAction: public TbStateAction
+				{
+					public:
+						virtual ~TbStateAction() {}
+						virtual void action(TbState *state)
+						{
+                            delete state;
+                        }
+                };
+
 			}
 		}
 	}
