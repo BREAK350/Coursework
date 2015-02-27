@@ -1,3 +1,4 @@
-﻿﻿*.~*~
+﻿﻿# .gitignore
 MainConsole.cpp
+*__history/
 *.cbproj*
