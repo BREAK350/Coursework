@@ -61,6 +61,12 @@ namespace dynlib
 					forEach(stateAction_);
 					delete stateAction_;
                     stateAction_ = NULL;
+				}
+
+				void TbStateContainer::removeAllState()
+				{
+					TbStateAction *stateAction_ = new TbRemoveStateAction();
+					forEach_(stateAction_);
                 }
 			}
 		}
